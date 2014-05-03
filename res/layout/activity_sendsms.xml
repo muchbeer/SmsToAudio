@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    >
+    
+        <ImageButton
+        android:id="@+id/btnSpeak"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/speak"
+        android:src="@android:drawable/ic_btn_speak_now" />
+
+
+<RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <EditText
+        android:id="@+id/editTextPhoneNo"
+         android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Your number here ..."
+       android:inputType="number"
+       android:phoneNumber="true" >
+    </EditText>
+
+ <Button
+     android:id="@+id/btnGetContact"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentTop="true"
+     android:layout_toRightOf="@+id/editTextPhoneNo"
+     android:text="Contacts" />
+
+   </RelativeLayout>
+  
+     <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:id="@+id/meLabel" android:layout_gravity="left|center_vertical" android:singleLine="false"
+            android:textSize="20dp"/>
+
+		    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/meLabel" >
+
+        <LinearLayout
+            android:id="@+id/messagesContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+   		
+   		  <RelativeLayout
+       android:layout_width="fill_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       
+       android:padding="10dp" >
+   		<EditText
+    android:id="@+id/editTextSMS"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:autoText="true"
+    android:hint="message text" />
+ 
+   <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:id="@+id/buttonSend"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+</RelativeLayout>
+
+</LinearLayout>

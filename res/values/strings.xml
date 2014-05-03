@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmsToAudio</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+ 	<string name="speak">Speak now</string>
+ 	
+ 	<string name="tts_settings">TTS Settings</string>
+ 	
+ 	  <string name="lang_en">English</string>
+ 	    <string name="lang_fr">French</string>
+ 	<string name="choose_lang">Choose Language</string>
+ 	
+ 	<string name="prefs_screen_title">Headphone SMS Settings</string>
+
+  <string name="ok">OK</string>
+  <string name="ok1">Select</string>
+  
+
+  <string name="enabled_summary">Read incoming messages</string>
+  <string name="enabled_title">Enabled</string>
+
+  <string name="activationMode_summary">Choose when to read messages</string>
+  <string name="activationMode_title">Activation mode</string>
+  <string-array name="activationMode_labels">
+    <item>Always on</item>
+    <item>Only with headphones</item>
+  </string-array>
+  <string-array name="activationMode_values">
+    <item>@string/activationModeValue_always</item>
+    <item>@string/activationModeValue_headphonesOnly</item>
+  </string-array>
+
+  <string name="volume_useDefault_summary">Use default call volume</string>
+  <string name="volume_title">Reading volume</string>
+  
+  <string-array name="Speedlabel">
+      <item >Very Slow</item>
+      <item >Slow</item>
+      <item >Normal</item>
+      <item >Fast</item>
+      <item >Very Fast</item>
+  </string-array>
+  <string-array name="Speedvalue">
+      
+      <item >speed_VS</item>
+      <item >speed_S</item>
+      <item >speed_N</item>
+      <item >speed_F</item>
+      <item >speed_VF</item>
+  </string-array>
+  
+  <string name="speed_VS">VS</string>
+  <string name="speed_S">S</string>
+  <string name="speed_N">N</string>
+  <string name="speed_F">F</string>
+  <string name="speed_VF">VF</string>
+  
+  <string name="speed_title">Speed</string>
+  <string name="speeding">Speed of Reading Text</string>
+  <string name="speedKey">Text_Speed</string>
+
+  <string name="preferSco_summary">Use a Bluetooth headset if Bluetooth and headphones are available  </string>
+  <string name="preferSco_title">Prefer Bluetooth</string>
+
+  <string name="speech_receivedSms">SMS from</string>
+  <string name="speech_receivedCall">Call from</string>
+
+  <string name="prefsName">HeadphoneSmsPrefs</string>
+  <string name="prefsKey">prefs</string>
+  <string name="prefsKey_enabled">enabled</string>
+  <string name="prefsKey_activationMode">activationMode</string>
+  <string name="activationModeValue_always">ALWAYS_ON</string>
+  <string name="activationModeValue_headphonesOnly">HEADPHONES_ONLY</string>
+  <string name="prefsKey_volume">volume</string>
+  <string name="prefsKey_preferSco">preferSco</string>
+ 	
+</resources>

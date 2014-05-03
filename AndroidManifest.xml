@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="king.muchbeer.aac"
+    android:versionCode="1"
+    android:versionName="1.1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    
+     <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+   <uses-permission android:name="android.permission.RECEIVE_SMS" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    
+<uses-permission android:name="android.permission.READ_SMS"/>
+<uses-permission android:name="android.permission.READ_CONTACTS"/> 
+
+ <meta-data android:name="com.google.android.backup.api_key"
+      android:value="AEdPqrEAAAAIiYoK0S2KEPwQ6zknGOTpYv6f8EsgFUo-KrSzmA" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="king.muchbeer.aac.Splash"
+            android:label="@string/app_name"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="king.muchbeer.aac.sendsms.ContactPicker"
+                  android:label="@string/app_name"
+                  android:windowSoftInputMode="stateAlwaysVisible">
+            <intent-filter>
+              <action android:name="android.intent.action.PICK"></action>
+              <category android:name="android.intent.category.DEFAULT"></category>
+              <data android:path="contacts" android:scheme="content"></data>
+            </intent-filter>
+        </activity>
+        
+        
+           <activity android:name="king.muchbeer.aac.sendsms.MainActivitySend"
+               android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name="king.muchbeer.aac.readsms.MainActivitySpeak" />
+        <activity android:name="king.muchbeer.aac.MainActivityTab" />
+        
+        
+       <receiver android:name="king.muchbeer.aac.headphone.HeadphoneSmsApp" android:enabled="true">
+      <intent-filter android:priority="1000">
+        <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+        <action android:name="android.intent.action.PHONE_STATE"/>
+      </intent-filter>
+    </receiver>
+
+    <receiver android:name="king.muchbeer.aac.headphone.BluetoothScoReceiver" android:enabled="true">
+      <intent-filter android:priority="1000">
+        <action android:name="android.media.SCO_AUDIO_STATE_CHANGED" /> <!-- sdk 8-13 -->
+        <action android:name="android.media.ACTION_SCO_AUDIO_STATE_UPDATED" /> <!-- sdk 14+ -->
+      </intent-filter>
+    </receiver>
+
+    <service android:enabled="true" android:name="king.muchbeer.aac.headphone.ReadSmsService"></service>
+
+    <receiver android:name="king.muchbeer.aac.headphone.OnOffAppWidgetProvider">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      </intent-filter>
+      <meta-data android:name="android.appwidget.provider"
+        android:resource="@xml/onoff_widget_info" />
+    </receiver>
+    <service android:name="king.muchbeer.aac.headphone.ToggleOnOffService"></service>
+
+    <activity android:name="king.muchbeer.aac.headphone.SettingActivityHeadphone" />
+             <activity android:name="king.muchbeer.aac.headphone.SpeedActivity" />
+    </application>
+</manifest>

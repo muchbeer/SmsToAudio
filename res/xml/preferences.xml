@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  android:title="@string/prefs_screen_title">
+  <CheckBoxPreference android:key="@string/prefsKey_enabled"
+    android:title="@string/enabled_title"
+    android:summary="@string/enabled_summary"
+    android:defaultValue="true"
+    android:persistent="true"/>
+  <ListPreference android:key="@string/prefsKey_activationMode"
+    android:title="@string/activationMode_title"
+    android:summary="@string/activationMode_summary"
+    android:entryValues="@array/activationMode_values"
+    android:entries="@array/activationMode_labels"
+    android:defaultValue="@string/activationModeValue_headphonesOnly"
+    android:persistent="true"/>
+  <king.muchbeer.aac.headphone.VolumeDialogPreference android:key="@string/prefsKey_volume"
+    android:title="@string/volume_title"
+    android:dialogTitle="@string/volume_title"
+    android:dialogLayout="@layout/activity_volume_dialog"
+    android:positiveButtonText="@string/ok"
+    android:negativeButtonText="@null"
+    android:defaultValue="-1"
+    android:persistent="true"/>
+  
+    <CheckBoxPreference android:key="@string/prefsKey_preferSco"
+    android:title="@string/preferSco_title"
+    android:summary="@string/preferSco_summary"
+    android:defaultValue="false"
+    android:persistent="true"/>
+    
+     <PreferenceCategory
+   android:summary="Speech Settings"
+   android:title="Settings" >
+ 
+  <ListPreference
+     android:entries="@array/Speedlabel"
+     android:entryValues="@array/Speedvalue"
+     android:key="speed"
+     android:summary="Speed of Reading Text"
+     android:title="Speed Text" />
+  <Preference
+		android:key="@string/tts_settings"
+		android:title="TTS settings"
+		android:summary="Open Text-To-Speech Summary" />
+ </PreferenceCategory>
+</PreferenceScreen>
